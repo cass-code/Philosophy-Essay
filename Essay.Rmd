@@ -1,0 +1,118 @@
+---
+documentclass: "elsarticle"
+Thesis_FP: TRUE
+space: 0.9cm
+Entry1: "An Exploration of Human Rationality with Empirical Evidence"
+Entry2: "\\textbf{Cassandra Pengelly}"
+Entry3: "\\textbf{20346212}"
+Uni_Logo: img/statue.png 
+Logo_width: 0.4 
+Entry4: "Philosophy and Economics 871"
+Entry5: "22 October 2021"
+Entry6: "Word Count: 2980"
+BottomRFooter: "\\footnotesize Page \\thepage" 
+addtoprule: TRUE
+addfootrule: TRUE           
+margin: 2.3 # Sides
+bottom: 2 # bottom
+top: 2.5 # Top
+HardSet_layout: TRUE 
+bibliography: Tex/ref.bib       
+csl: Tex/harvard-stellenbosch-university.csl 
+RemovePreprintSubmittedTo: TRUE
+toc: TRUE                       # Add a table of contents
+numbersections: TRUE             # Should sections (and thus figures and tables) be numbered?
+fontsize: 11pt                  # Set fontsize
+linestretch: 1.2                # Set distance between lines.
+link-citations: TRUE            # This creates dynamic links to the papers in reference list.
+output:
+  pdf_document:
+    keep_tex: TRUE
+    template: Tex/TexDefault.txt
+    fig_width: 3.5 # Adjust default figure sizes. This can also be done in the chunks of the text.
+    fig_height: 3.5
+# abstract: |
+  # Abstract to be written here. The abstract should not be too long and should provide the reader with a good understanding what you are writing about. Academic papers are not like novels where you keep the reader in suspense. To be effective in getting others to read your paper, be as open and concise about your findings here as possible. Ideally, upon reading your abstract, the reader should feel he / she must read your paper in entirety.
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE, fig.width = 6, fig.height = 5, fig.pos="H", fig.pos = 'H')
+```
+<!-- ############################## -->
+<!-- # Start Writing here: -->
+<!-- ############################## -->
+\newpage
+
+# Introduction \label{Introduction} 
+
+
+Are Humans Rational? • Yes – Anderson, Chater • No – Tversky, Kahneman, (Voltaire) • They do pretty well with limited resources – Simon, Gigerenzer
+
+When describing what it means to be human, famous Greek philosopher Aristotle defined human beings as rational animals. In fact, Aristotle emphasised that it is _rationality_ that makes humans unique and distinct from animals [@aristotle]. But exactly what it means for people to be rational has long been an interdisciplinary debate, drawing arguments from fields including philosophy, economics, psychology and mathematics. Nobel prizes
+
+This essay^[This essay was written in R using the package Texevier by @Texevier and the write up can be found on Github [here](https://github.com/cass-code/Phil_essay).] explores what it means to be rational and whether humans fit some definition of rationality. This essay is organised as follows. Section \ref{def} presents different frameworks for defining rationality, including rational choice theory and bounded rationality. Section \ref{rev} briefly compares different views on human rationality in the literature. Section \ref{case} presents three case studies that provide empirical evidence on rational decision-making. And the final section (\ref{con}) concludes. 
+
+# Defining Rationality  \label{def} 
+
+In order to understand if humans are rational, we first have to build a framework to define what we mean by rationality. Definitions of rationality relate to Max Weber's principle of methodological individualism^[The methodological precept that social phenomena should be explained as the result of individual actions[@weber]], since theories of rational actions underlie theories of rationality. It follows then that theories of rationality are classically linked to the primacy of "the action frame of reference" [@parsons p.43-51; @types p.517]. The social sciences have defined rationality in a number of different ways; the five most general notions of rationality.
+
+All of them can be related, more or less clearly, to Popper’s “problem-solving”
+notion (Popper, 1967).
+
+
+## Rational Choice Theory 
+
+## Bounded Rationality
+
+ Neoclassical economics assumes that people are perfectly rational, whereas behavioural economics uses psychology and economic theory to create more realistic models of human decision-making [@rabin]. People are subject to certain biases and often make use of heuristics in their decision-making process, which can lead to predictable errors in judgment [@khan, @fast, @prospect]. Behavioural economics literature investigates how these biases can be combated to improve welfare outcomes. @nudge introduced the idea of a nudge^[Nudge: an intervention that alters behaviour towards a desired action. In order for an intervention to qualify as a nudge, it should be cheap and easy to avoid [@nudge].] as a way to guide people to make better choices. For example, changing the default option for organ donation to be opt-in as opposed to explicit consent could benefit potential donors (who were deterred by the registration process) and save more lives [@nudge p.176].
+
+ 
+
+The concepts of loss aversion, reference dependence and regret avoidance can also be included in health interventions through a "regret lottery". @prospect describe loss aversion as a cognitive bias whereby people experience losses as more painful than the pleasure they receive from an equivalent gain. Thus, people are more willing to take on risk to avoid a loss, and are less risk-seeking when pursuing gain [@prospect p.268]. Reference dependence follows on from loss aversion and suggests that people define gains and losses relative to a reference point [@ref p.1039]. People are also subject to regret avoidance, where there is a significant emotional cost attached to regret and people make decisions to avoid regretting alternative decisions in the future [@regret]. 
+
+
+
+# The Great Human Rationality Debate \label{rev}
+
+# Case Studies \label{case} 
+
+
+
+```{r tab1, results = 'asis', warning=FALSE, message=FALSE, echo=FALSE}
+
+# library(xtable)
+# source("code/vac_stats1.R")
+# data<- vac_stats1()
+# 
+# table <- xtable(data, caption = "Vaccination Statistics \\label{tab1}")
+#   print.xtable(table,
+#              # tabular.environment = "longtable",
+#              floating = TRUE,
+#              table.placement = 'H',
+#              # scalebox = 0.3,
+#              comment = FALSE,
+#              caption.placement = 'bottom',
+#              include.rownames = FALSE,
+#              booktabs = T # Aesthetics
+#              )
+
+```
+
+
+
+
+
+# Conclusion \label{con} 
+The behavioural literature and empirical studies show that lotteries can be an effective method to incentivise vaccine take-up, and South Africans appear to be well-primed for such a health intervention. This field experiment is designed to test this hypothesis.
+
+
+\newpage
+
+# References {-}
+
+<div id="refs"></div>
+
+
+
+
+

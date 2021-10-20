@@ -1,0 +1,1 @@
+@inbook{kietzmann_2019, place={Cambridge}, title={Aristotle on the Definition of What It Is to Be Human}, DOI={10.1017/9781108131643.002}, booktitle={Aristotle's Anthropology}, publisher={Cambridge University Press}, author={Kietzmann, Christian}, editor={Keil, Geert and Kreft, NoraEditors}, year={2019}, pages={25–43}}

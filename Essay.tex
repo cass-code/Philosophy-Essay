@@ -1,0 +1,433 @@
+\documentclass[11pt,preprint, authoryear]{elsarticle}
+
+\makeatletter
+\renewcommand\@biblabel[1]{}
+\makeatother
+
+\usepackage{lmodern}
+%%%% My spacing
+\usepackage{setspace}
+\setstretch{1.2}
+\DeclareMathSizes{12}{14}{10}{10}
+
+% Wrap around which gives all figures included the [H] command, or places it "here". This can be tedious to code in Rmarkdown.
+\usepackage{float}
+\let\origfigure\figure
+\let\endorigfigure\endfigure
+\renewenvironment{figure}[1][2] {
+    \expandafter\origfigure\expandafter[H]
+} {
+    \endorigfigure
+}
+
+\let\origtable\table
+\let\endorigtable\endtable
+\renewenvironment{table}[1][2] {
+    \expandafter\origtable\expandafter[H]
+} {
+    \endorigtable
+}
+
+
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+    \usepackage{xltxtra,xunicode}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+  \newcommand{\euro}{€}
+\fi
+
+\usepackage{amssymb, amsmath, amsthm, amsfonts}
+
+\def\bibsection{\section*{References}} %%% Make "References" appear before bibliography
+
+
+\usepackage[round]{natbib}
+
+\usepackage{longtable}
+\usepackage[margin=2.3cm,bottom=2cm,top=2.5cm, includefoot]{geometry}
+\usepackage{fancyhdr}
+\usepackage[bottom, hang, flushmargin]{footmisc}
+\usepackage{graphicx}
+\numberwithin{equation}{section}
+\numberwithin{figure}{section}
+\numberwithin{table}{section}
+\setlength{\parindent}{0cm}
+\setlength{\parskip}{1.3ex plus 0.5ex minus 0.3ex}
+\usepackage{textcomp}
+\renewcommand{\headrulewidth}{0.2pt}
+\renewcommand{\footrulewidth}{0.3pt}
+
+\usepackage{array}
+\newcolumntype{x}[1]{>{\centering\arraybackslash\hspace{0pt}}p{#1}}
+
+%%%%  Remove the "preprint submitted to" part. Don't worry about this either, it just looks better without it:
+\makeatletter
+\def\ps@pprintTitle{%
+  \let\@oddhead\@empty
+  \let\@evenhead\@empty
+  \let\@oddfoot\@empty
+  \let\@evenfoot\@oddfoot
+}
+\makeatother
+
+ \def\tightlist{} % This allows for subbullets!
+
+\usepackage{hyperref}
+\hypersetup{breaklinks=true,
+            bookmarks=true,
+            colorlinks=true,
+            citecolor=blue,
+            urlcolor=blue,
+            linkcolor=blue,
+            pdfborder={0 0 0}}
+
+
+% The following packages allow huxtable to work:
+\usepackage{siunitx}
+\usepackage{multirow}
+\usepackage{hhline}
+\usepackage{calc}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{caption}
+
+
+\newenvironment{columns}[1][]{}{}
+
+\newenvironment{column}[1]{\begin{minipage}{#1}\ignorespaces}{%
+\end{minipage}
+\ifhmode\unskip\fi
+\aftergroup\useignorespacesandallpars}
+
+\def\useignorespacesandallpars#1\ignorespaces\fi{%
+#1\fi\ignorespacesandallpars}
+
+\makeatletter
+\def\ignorespacesandallpars{%
+  \@ifnextchar\par
+    {\expandafter\ignorespacesandallpars\@gobble}%
+    {}%
+}
+\makeatother
+
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newenvironment{CSLReferences}%
+  {\setlength{\parindent}{0pt}%
+  \everypar{\setlength{\hangindent}{\cslhangindent}}\ignorespaces}%
+  {\par}
+
+
+\urlstyle{same}  % don't use monospace font for urls
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\setcounter{secnumdepth}{5}
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+
+%%% Include extra packages specified by user
+
+%%% Hard setting column skips for reports - this ensures greater consistency and control over the length settings in the document.
+%% page layout
+%% paragraphs
+\setlength{\baselineskip}{12pt plus 0pt minus 0pt}
+\setlength{\parskip}{12pt plus 0pt minus 0pt}
+\setlength{\parindent}{0pt plus 0pt minus 0pt}
+%% floats
+\setlength{\floatsep}{12pt plus 0 pt minus 0pt}
+\setlength{\textfloatsep}{20pt plus 0pt minus 0pt}
+\setlength{\intextsep}{14pt plus 0pt minus 0pt}
+\setlength{\dbltextfloatsep}{20pt plus 0pt minus 0pt}
+\setlength{\dblfloatsep}{14pt plus 0pt minus 0pt}
+%% maths
+\setlength{\abovedisplayskip}{12pt plus 0pt minus 0pt}
+\setlength{\belowdisplayskip}{12pt plus 0pt minus 0pt}
+%% lists
+\setlength{\topsep}{10pt plus 0pt minus 0pt}
+\setlength{\partopsep}{3pt plus 0pt minus 0pt}
+\setlength{\itemsep}{5pt plus 0pt minus 0pt}
+\setlength{\labelsep}{8mm plus 0mm minus 0mm}
+\setlength{\parsep}{\the\parskip}
+\setlength{\listparindent}{\the\parindent}
+%% verbatim
+\setlength{\fboxsep}{5pt plus 0pt minus 0pt}
+
+
+
+\begin{document}
+
+
+
+%titlepage
+\thispagestyle{empty}
+\begin{center}
+\begin{minipage}{1\linewidth}
+    \centering
+%Entry1
+    {\uppercase{\huge An Exploration of Human Rationality with Empirical
+Evidence\par}}
+    \vspace{0.9cm}
+%Author's name
+    {\LARGE \textbf{Cassandra Pengelly}\par}
+    \vspace{0.9cm}
+%Supervisor's Details
+    {\LARGE \textbf{20346212}\par}
+    \vspace{0.9cm}
+%University logo
+\begin{center}
+    \includegraphics[width=0.4\linewidth]{img/statue.png}
+\end{center}
+\vspace{0.9cm}
+%Degree
+    {\LARGE Philosophy and Economics 871\par}
+    \vspace{0.9cm}
+%Institution
+    {\LARGE 22 October 2021\par}
+    \vspace{0.9cm}
+%Date
+    {\LARGE Word Count: 2980}
+    \vspace{0.9cm}
+%More
+    {\normalsize }
+%More
+    {\normalsize }
+\end{minipage}
+\end{center}
+\clearpage
+
+
+\begin{frontmatter}  %
+
+\title{}
+
+% Set to FALSE if wanting to remove title (for submission)
+
+
+\vspace{1cm}
+
+
+
+
+
+\vspace{0.5cm}
+
+\end{frontmatter}
+
+
+\renewcommand{\contentsname}{Table of Contents}
+{\tableofcontents}
+
+%________________________
+% Header and Footers
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagestyle{fancy}
+\chead{}
+\rhead{}
+\lfoot{}
+\rfoot{\footnotesize Page \thepage}
+\lhead{}
+%\rfoot{\footnotesize Page \thepage } % "e.g. Page 2"
+\cfoot{}
+
+%\setlength\headheight{30pt}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%________________________
+
+\headsep 35pt % So that header does not go over title
+
+
+
+
+\newpage
+
+\hypertarget{introduction}{%
+\section{\texorpdfstring{Introduction
+\label{Introduction}}{Introduction }}\label{introduction}}
+
+Are Humans Rational? • Yes -- Anderson, Chater • No -- Tversky,
+Kahneman, (Voltaire) • They do pretty well with limited resources --
+Simon, Gigerenzer
+
+When describing what it means to be human, famous Greek philosopher
+Aristotle defined human beings as rational animals. In fact, Aristotle
+emphasised that it is \emph{rationality} that makes humans unique and
+distinct from animals (\protect\hyperlink{ref-aristotle}{Kietzmann,
+2019}). But exactly what it means for people to be rational has long
+been an interdisciplinary debate, drawing arguments from fields
+including philosophy, economics, psychology and mathematics. Nobel
+prizes
+
+This essay\footnote{This essay was written in R using the package
+  Texevier by \protect\hyperlink{ref-Texevier}{Katzke}
+  (\protect\hyperlink{ref-Texevier}{2017}) and the write up can be found
+  on Github \href{https://github.com/cass-code/Phil_essay}{here}}
+explores what it means to be rational and whether humans fit some
+definition of rationality. This essay is organised as follows. Section
+\ref{def} presents different frameworks for defining rationality,
+including rational choice theory and bounded rationality. Section
+\ref{rev} briefly compares different views on human rationality in the
+literature. Section \ref{case} presents three case studies that provide
+empirical evidence on rational decision-making. And the final section
+(\ref{con}) concludes.
+
+\hypertarget{defining-rationality}{%
+\section{\texorpdfstring{Defining Rationality
+\label{def}}{Defining Rationality }}\label{defining-rationality}}
+
+In order to understand if humans are rational, we first have to build a
+framework to define what we mean by rationality. Definitions of
+rationality relate to Max Weber's principle of methodological
+individualism\footnote{The methodological precept that social phenomena
+  should be explained as the result of individual
+  actions(\protect\hyperlink{ref-weber}{Weber, 1922})}, since theories
+of rational actions underlie theories of rationality. It follows then
+that theories of rationality are classically linked to the primacy of
+``the action frame of reference''
+(\protect\hyperlink{ref-types}{Demeulenaere, 2014: 517};
+\protect\hyperlink{ref-parsons}{Parsons, 1937: 43--51}). The social
+sciences have defined rationality in a number of different ways; the
+five most general notions of rationality.
+
+All of them can be related, more or less clearly, to Popper's
+``problem-solving'' notion (Popper, 1967).
+
+\hypertarget{rational-choice-theory}{%
+\subsection{Rational Choice Theory}\label{rational-choice-theory}}
+
+\hypertarget{bounded-rationality}{%
+\subsection{Bounded Rationality}\label{bounded-rationality}}
+
+Neoclassical economics assumes that people are perfectly rational,
+whereas behavioural economics uses psychology and economic theory to
+create more realistic models of human decision-making
+(\protect\hyperlink{ref-rabin}{Rabin, 2002}). People are subject to
+certain biases and often make use of heuristics in their decision-making
+process, which can lead to predictable errors in judgment
+\protect\hyperlink{ref-prospect}{Kahneman \& Tversky}
+(\protect\hyperlink{ref-prospect}{1979}). Behavioural economics
+literature investigates how these biases can be combated to improve
+welfare outcomes. \protect\hyperlink{ref-nudge}{Thaler \& Sunstein}
+(\protect\hyperlink{ref-nudge}{2008}) introduced the idea of a
+nudge\footnote{Nudge: an intervention that alters behaviour towards a
+  desired action. In order for an intervention to qualify as a nudge, it
+  should be cheap and easy to avoid
+  (\protect\hyperlink{ref-nudge}{Thaler \& Sunstein, 2008}).} as a way
+to guide people to make better choices. For example, changing the
+default option for organ donation to be opt-in as opposed to explicit
+consent could benefit potential donors (who were deterred by the
+registration process) and save more lives
+(\protect\hyperlink{ref-nudge}{Thaler \& Sunstein, 2008: 176}).
+
+The concepts of loss aversion, reference dependence and regret avoidance
+can also be included in health interventions through a ``regret
+lottery''. \protect\hyperlink{ref-prospect}{Kahneman \& Tversky}
+(\protect\hyperlink{ref-prospect}{1979}) describe loss aversion as a
+cognitive bias whereby people experience losses as more painful than the
+pleasure they receive from an equivalent gain. Thus, people are more
+willing to take on risk to avoid a loss, and are less risk-seeking when
+pursuing gain (\protect\hyperlink{ref-prospect}{Kahneman \& Tversky,
+1979: 268}). Reference dependence follows on from loss aversion and
+suggests that people define gains and losses relative to a reference
+point (\protect\hyperlink{ref-ref}{Tversky \& Kahneman, 1991: 1039}).
+People are also subject to regret avoidance, where there is a
+significant emotional cost attached to regret and people make decisions
+to avoid regretting alternative decisions in the future
+(\protect\hyperlink{ref-regret}{Bailey \& Kinerson, 2005}).
+
+\hypertarget{the-great-human-rationality-debate}{%
+\section{\texorpdfstring{The Great Human Rationality Debate
+\label{rev}}{The Great Human Rationality Debate }}\label{the-great-human-rationality-debate}}
+
+\hypertarget{case-studies}{%
+\section{\texorpdfstring{Case Studies
+\label{case}}{Case Studies }}\label{case-studies}}
+
+\hypertarget{conclusion}{%
+\section{\texorpdfstring{Conclusion
+\label{con}}{Conclusion }}\label{conclusion}}
+
+The behavioural literature and empirical studies show that lotteries can
+be an effective method to incentivise vaccine take-up, and South
+Africans appear to be well-primed for such a health intervention. This
+field experiment is designed to test this hypothesis.
+
+\newpage
+
+\hypertarget{references}{%
+\section*{References}\label{references}}
+\addcontentsline{toc}{section}{References}
+
+\hypertarget{refs}{}
+\begin{CSLReferences}{1}{0}
+\leavevmode\hypertarget{ref-regret}{}%
+Bailey, J.J. \& Kinerson, C. 2005. Regret avoidance and risk tolerance.
+\emph{Journal of Financial Counseling and Planning}. 16(1):23.
+
+\leavevmode\hypertarget{ref-types}{}%
+Demeulenaere, P. 2014. Are there many types of rationality.
+\emph{Papers. Revista de Sociologia}. 99(4):515--528.
+
+\leavevmode\hypertarget{ref-fast}{}%
+Kahneman, D. 2011. \emph{Thinking, fast and slow}. Macmillan.
+
+\leavevmode\hypertarget{ref-prospect}{}%
+Kahneman, D. \& Tversky, A. 1979. Prospect theory: An analysis of
+decision under risk. \emph{Econometrica}. 47(2):263--291.
+
+\leavevmode\hypertarget{ref-Texevier}{}%
+Katzke, N.F. 2017. \emph{{Texevier}: {P}ackage to create elsevier
+templates for rmarkdown}. Stellenbosch, South Africa: Bureau for
+Economic Research.
+
+\leavevmode\hypertarget{ref-aristotle}{}%
+Kietzmann, C. 2019. \emph{Aristotle on the definition of what it is to
+be human}. G. Keil \& N. Kreft (eds.). Cambridge University Press.
+
+\leavevmode\hypertarget{ref-parsons}{}%
+Parsons, T. 1937. \emph{The structure of social action}. New York: Free
+Press.
+
+\leavevmode\hypertarget{ref-rabin}{}%
+Rabin, M. 2002. A perspective on psychology and economics.
+\emph{European economic review}. 46(4-5):657--685.
+
+\leavevmode\hypertarget{ref-nudge}{}%
+Thaler, R. \& Sunstein, C. 2008. \emph{Nudge: Improving decisions about
+health, wealth, and happiness.} New Haven, CT: Yale University Press.
+
+\leavevmode\hypertarget{ref-khan}{}%
+Tversky, A. \& Kahneman, D. 1974. Judgment under uncertainty: Heuristics
+and biases. \emph{Science}. 185(4157):1124--1131.
+
+\leavevmode\hypertarget{ref-ref}{}%
+Tversky, A. \& Kahneman, D. 1991. Loss aversion in riskless choice: A
+reference-dependent model. \emph{The Quarterly Journal of Economics}.
+106(4):1039--1061. {[}Online{]}, Available:
+\url{http://www.jstor.org/stable/2937956}.
+
+\leavevmode\hypertarget{ref-weber}{}%
+Weber, M. 1922. \emph{Economy and society}. Guenther Roth \& W. Claus
+(eds.). Berkeley: University of California Press, 1968.
+
+\end{CSLReferences}
+
+\bibliography{Tex/ref}
+
+
+
+
+
+\end{document}
