@@ -35,9 +35,7 @@ output:
   # Abstract to be written here. The abstract should not be too long and should provide the reader with a good understanding what you are writing about. Academic papers are not like novels where you keep the reader in suspense. To be effective in getting others to read your paper, be as open and concise about your findings here as possible. Ideally, upon reading your abstract, the reader should feel he / she must read your paper in entirety.
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE, fig.width = 6, fig.height = 5, fig.pos="H", fig.pos = 'H')
-```
+
 <!-- ############################## -->
 <!-- # Start Writing here: -->
 <!-- ############################## -->
@@ -59,12 +57,12 @@ In order to understand if humans are rational, we first have to build a framewor
 The first notion regards an individual as rational if she acts in a way that is intentional. This stems from Weber's sociology, where the intention of the act is primary, and the outcome of the action is of secondary importance [@fry p.26]. A simple example of a rational act under this framework would be for a person to eat ice-cream because she enjoys eating ice-cream, or alternatively, not to eat ice-cream because she wants to reduce her sugar intake. To act irrationally according to this theory would be to pursue an action based on non-intentional causes [@types p.518]. For instance, a lecturer intends to grade all his students' tests fairly, but he tends to give higher marks to papers he grades after he's eaten lunch^[The lecturer's hunger may lead him to mark more strictly]. In this case the lecturer is unaware of the influence of external factors on his deliberate decision. Thus, intentional motives are not fully governing the individual choice. It may also be that a person acts in opposition to her intentions, such as eating ice-cream because she craves sugar even though she would prefer not to eat ice-cream. While intentionality is not a particularly strong criteria by which to judge rationality, it is a useful starting point.
 
 A second criterion for rationality is that choices should be transitive. As posited by @sen [p.323], neoclassical economics defines a rational person as one who is internally consistent in how he orders his subjective preferences. For example, if a person prefers ice-cream to chocolate, and he prefers chocolate to apples, it must follow that he prefers ice-cream to apples. There is no restriction or structure placed on the decision itself -- there is no "correct" decision. However, if a person made inconsistent decisions, he would be considered irrational. For example, a person choosing to eat apples when there is ice-cream available, given that he prefers ice-cream to apples. As shown by @math [p.147], transitivity can be written in mathematical terms as: 
+
 \begin{align*}
 Let A be a set and R be a relation on A \newline
 R is transitive iff for all x, y, and z} %in% A, if xRy and yRz, then xRz.\newline
-\end{align*}
-For the ice-cream example above, whenever $x > y$ and y > z, then also x > z
- ^[Where $x=$ice-cream, $y$=chocolate and $z$=apples]
+For the ice-cream example above, whenever x > y and y > z, then also x > z
+\end{align*} ^[Where $x=$ice-cream, $y$=chocolate and $z$=apples]
 
 
 This approach of definitional egoism sometimes goes under the name of rational choice, and it involves nothing other than internal consistency. A person's choices are considered "rational" in this ap- proach if and only if these choices can all be explained in terms of some preference relation consistent with the revealed preference defi- nition, that is, if all his choices can be explained as the choosing of "most preferred" alternatives with respect to a postulated preference relation.'2 The rationale of this approach seems to be based on the idea that the only way of understanding a person's real preference is to examine his actual choices, and there is no choice-independent way of understanding someone's attitude towards alternative
@@ -126,25 +124,7 @@ The concepts of loss aversion, reference dependence and regret avoidance can als
 
 
 
-```{r tab1, results = 'asis', warning=FALSE, message=FALSE, echo=FALSE}
 
-# library(xtable)
-# source("code/vac_stats1.R")
-# data<- vac_stats1()
-# 
-# table <- xtable(data, caption = "Vaccination Statistics \\label{tab1}")
-#   print.xtable(table,
-#              # tabular.environment = "longtable",
-#              floating = TRUE,
-#              table.placement = 'H',
-#              # scalebox = 0.3,
-#              comment = FALSE,
-#              caption.placement = 'bottom',
-#              include.rownames = FALSE,
-#              booktabs = T # Aesthetics
-#              )
-
-```
 
 
 

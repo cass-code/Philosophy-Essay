@@ -1,0 +1,13 @@
+@article{10.2307/2264946,
+ ISSN = {00483915, 10884963},
+ URL = {http://www.jstor.org/stable/2264946},
+ author = {Amartya K. Sen},
+ journal = {Philosophy & Public Affairs},
+ number = {4},
+ pages = {317--344},
+ publisher = {Wiley},
+ title = {Rational Fools: A Critique of the Behavioral Foundations of Economic Theory},
+ volume = {6},
+ year = {1977}
+}
+
