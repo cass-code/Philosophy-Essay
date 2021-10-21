@@ -1,3 +1,1 @@
-# Behavioural
- 
 # Philosophy-Essay
