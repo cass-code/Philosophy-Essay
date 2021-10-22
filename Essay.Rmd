@@ -2,7 +2,7 @@
 documentclass: "elsarticle"
 Thesis_FP: TRUE
 space: 0.9cm
-Entry1: "An Exploration of Human Rationality with Empirical Evidence"
+Entry1: "An Exploration of Human Rationality"
 Entry2: "\\textbf{Cassandra Pengelly}"
 Entry3: "\\textbf{20346212}"
 Uni_Logo: img/statue.png 
@@ -46,72 +46,37 @@ knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE, fig.width 
 # Introduction \label{Introduction} 
 
 
-Are Humans Rational? • Yes – Anderson, Chater • No – Tversky, Kahneman, (Voltaire) • They do pretty well with limited resources – Simon, Gigerenzer
 
-When describing what it means to be human, famous Greek philosopher Aristotle defined human beings as rational animals. In fact, Aristotle emphasised that it is _rationality_ that makes humans unique and distinct from animals [@aristotle]. But exactly what it means for people to be rational has long been an interdisciplinary debate, drawing arguments from fields including philosophy, economics, psychology and mathematics. Nobel prizes
+When describing what it means to be human, famous Greek philosopher Aristotle defined human beings as rational animals. In fact, Aristotle emphasised that it is _rationality_ that makes humans unique and distinct from animals [@aristotle]. But exactly what it means for people to be rational has long been an interdisciplinary debate, drawing arguments from fields including philosophy, economics, psychology and mathematics. The importance of 
 
-This essay^[This essay was written in R using the package Texevier by @Texevier and the write up can be found on Github [here](https://github.com/cass-code/Phil_essay).] explores what it means to be rational and whether humans fit some definition of rationality. This essay is organised as follows. Section \ref{def} presents five different criteria for defining rationality. Section \ref{rev} briefly compares different views on human rationality in the literature. Section \ref{case} presents three case studies that provide empirical evidence on rational decision-making. And the final section (\ref{con}) concludes. 
+This essay^[This essay was written in R using the package Texevier by @Texevier and the write up can be found on Github [here](https://github.com/cass-code/Phil_essay).] explores what it means to be rational and investigates whether we can classify humans as rational beings. This essay is organised as follows. Section \ref{def} presents different criteria and theories for defining rationality. Section \ref{rev} briefly compares different views on human rationality in the literature. Section \ref{case} presents three case studies that provide empirical evidence on rational decision-making regarding gym membership contracts, the stock market and litigation. And the final section (\ref{con}) concludes. 
 
 # Defining Rationality  \label{def} 
 
-In order to understand if humans are rational, we first have to build a framework to define what we mean by rationality. Definitions of rationality relate to Max Weber's principle of methodological individualism^[The methodological precept that social phenomena should be explained as the result of individual actions [@weber], since theories of rational actions underlie theories of rationality. It follows then that theories of rationality are classically linked to the primacy of "the action frame of reference" [@parsons p.43-51; @types p.517]. While the social sciences have defined rationality in a number of different ways, this section focuses on five of the most general notions of rationality.
+In order to understand if humans are rational, we first have to build a framework to define what we mean by rationality. Definitions of rationality relate to Max Weber's principle of methodological individualism^[The methodological precept that social phenomena should be explained as the result of individual actions [@weber]], since theories of rational actions underlie theories of rationality. It follows then that theories of rationality are classically linked to the primacy of "the action frame of reference" [@parsons p.43-51; @types p.517]. While the social sciences have defined rationality in a number of different ways, this section focuses on five of the most general notions of rationality.
 
-The first notion regards an individual as rational if she acts in a way that is intentional. This stems from Weber's sociology, where the intention of the act is primary, and the outcome of the action is of secondary importance [@fry p.26]. A simple example of a rational act under this framework would be for a person to eat ice-cream because she enjoys eating ice-cream, or alternatively, not to eat ice-cream because she wants to reduce her sugar intake. To act irrationally according to this theory would be to pursue an action based on non-intentional causes [@types p.518]. For instance, a lecturer intends to grade all his students' tests fairly, but he tends to give higher marks to papers he grades after he's eaten lunch^[The lecturer's hunger may lead him to mark more strictly]. In this case the lecturer is unaware of the influence of external factors on his deliberate decision. Thus, intentional motives are not fully governing the individual choice. It may also be that a person acts in opposition to her intentions, such as eating ice-cream because she craves sugar even though she would prefer not to eat ice-cream. While intentionality is not a particularly strong criteria by which to judge rationality, it is a useful starting point.
+The first notion regards an individual as rational if she acts in a way that is intentional. This stems from Weber's sociology, where the intention of the act is primary, and the outcome of the action is of secondary importance [@fry p.26]. A simple example of a rational act under this framework would be for a person to eat ice-cream because she enjoys eating ice-cream, or alternatively, not to eat ice-cream because she wants to reduce her sugar intake. To act irrationally according to this theory would be to pursue an action based on non-intentional causes [@types p.518]. For instance, a lecturer intends to grade all his students' tests fairly, but he tends to give higher marks to papers he grades after he's eaten lunch^[The lecturer's hunger may lead him to unintentionally mark more strictly.]. In this case the lecturer is unaware of the influence of external factors on his deliberate decision. Thus, intentional motives are not fully governing the individual choice. It may also be that a person acts in opposition to her intentions, such as eating ice-cream because she craves sugar even though she would prefer not to eat ice-cream. While intentionality is not a particularly strong criterion by which to judge rationality, it is a useful starting point.
 
-A second criterion for rationality is that choices should be transitive. As posited by @sen [p.323], neoclassical economics defines a rational person as one who is internally consistent in how he orders his subjective preferences. For example, if a person prefers ice-cream to chocolate, and he prefers chocolate to apples, it must follow that he prefers ice-cream to apples. There is no restriction or structure placed on the decision itself -- there is no "correct" decision. However, if a person made inconsistent decisions, he would be considered irrational. For example, a person choosing to eat apples when there is ice-cream available, given that he prefers ice-cream to apples. As shown by @math [p.147], transitivity can be written in mathematical terms as: 
-\begin{align*}
-Let A be a set and R be a relation on A \newline
-R is transitive iff for all x, y, and z} %in% A, if xRy and yRz, then xRz.\newline
-\end{align*}
-For the ice-cream example above, whenever $x > y$ and y > z, then also x > z
- ^[Where $x=$ice-cream, $y$=chocolate and $z$=apples]
+The second criterion for rationality is that choices should be transitive. This approach defines a rational person as one who is internally consistent in how he orders his subjective preferences [@sen p.323]. For example, if a person prefers ice-cream to chocolate, and he prefers chocolate to apples, it must follow that he prefers ice-cream to apples. There is no restriction or structure placed on the decision itself -- there is no "correct" decision. However, if a person makes inconsistent decisions, he would be considered irrational. For example, a person choosing to eat apples when there is ice-cream available, given that he prefers ice-cream to apples. The theory supporting this criterion is that observing a person's actual choices is the only way of understanding an individual's real preferences. As shown by @math [p.147], transitivity can be written in mathematical terms as: 
 
+$Let \; A \; be \;a\; set \;and\; R\; be \;a \;relation \;on\; A:$ \newline
+$R\; is \;transitive \;iff \;for \;all \;x, \;y,\; and \; z \in A, \;if\; xRy \;and\; yRz,\; then\; xRz.$ 
 
-This approach of definitional egoism sometimes goes under the name of rational choice, and it involves nothing other than internal consistency. A person's choices are considered "rational" in this ap- proach if and only if these choices can all be explained in terms of some preference relation consistent with the revealed preference defi- nition, that is, if all his choices can be explained as the choosing of "most preferred" alternatives with respect to a postulated preference relation.'2 The rationale of this approach seems to be based on the idea that the only way of understanding a person's real preference is to examine his actual choices, and there is no choice-independent way of understanding someone's attitude towards alternative
+Applying this definition to the ice-cream example above, whenever $x > y$ and $y > z$, then also $x > z$, where $x=$ ice-cream, $y=$ chocolate and $z=$ apples.
 
+The third theory of rationality defines a rational individual as one who chooses the sufficient means to achieve an end. This instrumental rationality implies the normative notion of correctness; rationality is dependent on the ability of a person to select the "correct" means to reach an end [@types]. For example, it would be instrumentally rational to start a business if an individual has an end goal of making profit. 
 
+The fourth criterion of rationality is that individuals pursue their self-interest efficiently. This concept of rationality is more strict as it imposes structure on both the choice of an end and the means to achieve this end, as well as requiring consistency of the ends. This approach is related to rational choice theory and utility maximisation, which are widely used in neoclassical economics. Under utilitarianism, which has its roots in hedomism^[The philosopical theory that people are motivated in life by pleasure and pain @hed]
 
-The second notion of rationality is linked to the ideal norm of consistency
-or transitivity of choices. The rationality does not stem from the contents of
-individual choices as such, but just from the fact that individuals are consistent
-in the ordering of their subjective preferences. Preferences are clearly not
-considered to be rational in this case. It is the official position of neo-classical
-economics, where rationality does not involve any kind of “right” decision,
-but only the fact that people do not take inconsistent decisions (Sen, 1977).
-Irrationality here would correspond to inconsistent choices of the kind, again,
-described by Kahneman and Tversky (2000), or Elster (2010). Here again,
+A similar concept to rational choice theory is that of bounded rationality, as proposed by @simon
 
+The fifth notion of rationality defines a rational person as one that has a good reason, from her point of view, for her actions. The fact that a person has _good_ reasons and not just any reasons is the main idea behind Boudon's theory of rationality [@boudon]. The theory presupposes that there is an ideally good choice that is attainable, but a person could still be rational even if she does not make this "ideal" choice. Rather, a rational individual makes a reasonable choice from her perspective, given her circumstances and available information. This is similar to bounded rationality but differs in that Boudon explicitly emphasises good reasons.
 
-
-
-
-
-The first one is to consider that individuals are rational whenever they act
-in an intentional way. The intentional decision to act corresponds to the reason
-someone has to act, for instance smoking for her pleasure, or not smoking in
-order to avoid health problems. This classical idea can be found in Weber.
-
-An irrational behaviour would be then to act on the basis of non-intentional
-causes. For instance, Kahneman (2011) reports a study about parole
-judges observed in their decisions. In this example, individual judges tend to
-be more severe when they are hungrier: clearly in this case non-intentional
-and unconscious causes affect intentional decisions. The judges are not aware
-of the influence of those factors on their deliberate decisions. This means that
-intentional motives do not have the sole influence on individual decisions;
-however, in this example it is still intentional decisions that are at stake, partly
-determined by unconscious trends. It can be also the case that people will act
-in a manner that is opposed to their intentions, for instance when they smoke
-although they would prefer not to smoke.
-Intentional action can clearly be linked
 
 
 All of them can be related, more or less clearly, to Popper’s “problem-solving”
 notion (Popper, 1967).
 
-
-## Rational Choice Theory 
-
-## Bounded Rationality
 
  Neoclassical economics assumes that people are perfectly rational, whereas behavioural economics uses psychology and economic theory to create more realistic models of human decision-making [@rabin]. People are subject to certain biases and often make use of heuristics in their decision-making process, which can lead to predictable errors in judgment [@khan, @fast, @prospect]. Behavioural economics literature investigates how these biases can be combated to improve welfare outcomes. @nudge introduced the idea of a nudge^[Nudge: an intervention that alters behaviour towards a desired action. In order for an intervention to qualify as a nudge, it should be cheap and easy to avoid [@nudge].] as a way to guide people to make better choices. For example, changing the default option for organ donation to be opt-in as opposed to explicit consent could benefit potential donors (who were deterred by the registration process) and save more lives [@nudge p.176].
 
@@ -119,34 +84,25 @@ notion (Popper, 1967).
 The concepts of loss aversion, reference dependence and regret avoidance can also be included in health interventions through a "regret lottery". @prospect describe loss aversion as a cognitive bias whereby people experience losses as more painful than the pleasure they receive from an equivalent gain. Thus, people are more willing to take on risk to avoid a loss, and are less risk-seeking when pursuing gain [@prospect p.268]. Reference dependence follows on from loss aversion and suggests that people define gains and losses relative to a reference point [@ref p.1039]. People are also subject to regret avoidance, where there is a significant emotional cost attached to regret and people make decisions to avoid regretting alternative decisions in the future [@regret]. 
 
 
-
 # The Great Debate \label{rev}
+
+
+Are Humans Rational? • Yes – Anderson, Chater • No – Tversky, Kahneman, (Voltaire) • They do pretty well with limited resources – Simon, Gigerenzer
 
 # Case Studies \label{case} 
 
+## Gym Membership 486
+
+A standard assumption in classical economic literature is that agents hold rational expectations regarding their future consumption and make choices on a utility-maximising basis. @gym test this assumption by investigating how people choose gym contracts. The authors use a data set from three American health clubs, which includes information on the types of contracts that members hold, the cost of these contracts, and the daily attendance of 7,752 club members for three years. First, @gym construct a contract choice model with the assumption that going to the gym has an immediate effort cost and future health benefits; the model also assumes that the cost of effort is unknown ex ante. Additionally, the model assumes customers pay a fee to exercise and can choose from and flat-fee, monthly or annual contracts The authors then make 3 different predictions based on rational beliefs and standard preferences. The first prediction is the price per expected attendance. The second prediction is that members who took out monthly contracts would have, on average, a lower initial attendance than those who took out annual contracts. And the final prediction is that the average actual gym attendance equals the average forecast of attendance.
+
+The paper finds that people do not choose their optimal contract, given how often they go to the gym [@gym p.716]. The empirical analysis shows that 80% of monthly members would have paid less under a pay-per-visit scheme for the same number of visits. And members who took out monthly contracts upwards of 70$ would have paid 70% less under the flat-fee system for the same number of visits. A rational utility maximiser would opt to pay less for a given number of visits if he derived positive utility from having money. Thus, paying more for a given number of gym sessions suggests that these individuals are not rational. Monthly gym subscribers can cancel their membership in any month but are charged a higher fee per month than the annual contract. Individuals who are more unsure of how often they will gym each month would prefer the monthly contract because it's more flexible. And those who are more sure that they will consistently gym would prefer annual memberships because they work out to be cheaper. Therefore under a rational system of beliefs, annual members have a higher likelihood of being frequent club users than monthly ones and renewing their annual gym membership. The data shows that the second prediction does not holds and that annual members are 17% less likely to remain enrolled for longer than a year than monthly subscribers. 
+
+Finally, the third prediction is contradicted by the results, where the average forecasted monthly visits was 9.5 and the average actual attendance was 4.17 visits per month. The authors conclude that their results are not in line with the predictions of a rational model, and that people likely overestimate their future efficiency or future self-control [@gym p.716]. In a related study, @gymm ran an experiment to investigate gym attendance and found that their test subjects tended to greatly overpredict the number of future gym visits. The paper concluded from the results that their subjects were presently biased and naive about self-control problems. These results and interpretation are supported by @comm [p.4] who analysed commitment preferences and found that participants held overoptimistic beliefs about gym attendance and could be classified as naive hyperbolic discounters. These empirical studies suggest that humans are not rational when it comes to choosing gym contracts. 
 
 
-```{r tab1, results = 'asis', warning=FALSE, message=FALSE, echo=FALSE}
+## Investing
 
-# library(xtable)
-# source("code/vac_stats1.R")
-# data<- vac_stats1()
-# 
-# table <- xtable(data, caption = "Vaccination Statistics \\label{tab1}")
-#   print.xtable(table,
-#              # tabular.environment = "longtable",
-#              floating = TRUE,
-#              table.placement = 'H',
-#              # scalebox = 0.3,
-#              comment = FALSE,
-#              caption.placement = 'bottom',
-#              include.rownames = FALSE,
-#              booktabs = T # Aesthetics
-#              )
-
-```
-
-
+## Litigation 
 
 
 

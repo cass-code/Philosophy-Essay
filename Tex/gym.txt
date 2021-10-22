@@ -1,0 +1,13 @@
+@article{gymm,
+ ISSN = {00251909, 15265501},
+ URL = {http://www.jstor.org/stable/24551076},
+ author = {Dan Acland and Matthew R. Levy},
+ journal = {Management Science},
+ number = {1},
+ pages = {146--160},
+ publisher = {INFORMS},
+ title = {Naiveté, Projection Bias, and Habit Formation in Gym Attendance},
+ volume = {61},
+ year = {2015}
+}
+
